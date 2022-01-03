@@ -28,7 +28,6 @@ Nowadays it powers many Azure Cloud and Microsoft services.
 
 ## 2. Azure Service Fabric Version
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started
-![image](https://user-images.githubusercontent.com/97020391/147914723-1b876cb0-69b6-43e8-8e64-5fa1bd7af3ea.png)
 ![image](https://user-images.githubusercontent.com/97020391/147914744-e0bc9a27-fc21-42ad-85fa-dca359a0afc4.png)
 ![image](https://user-images.githubusercontent.com/97020391/147914751-bbf35faa-3563-4ee2-8b3b-e8a298d063eb.png)
 
@@ -73,8 +72,7 @@ It has the following elements:
 ![image](https://user-images.githubusercontent.com/97020391/147942280-2e4607b2-bb2b-47f4-b04e-9662e430344b.png)
 
 ### 4.2. Currency Manager project - StartupServices.xml
-
-![image](https://user-images.githubusercontent.com/97020391/147940564-44f77200-a1fe-40ef-b441-a567f38ed6b6.png)
+![image](https://user-images.githubusercontent.com/97020391/147943399-f501e09e-4b61-4f5b-bb43-f82234626f99.png)
 
 ### 4.3. Currency Manager – LocalNode5.xml
 ![image](https://user-images.githubusercontent.com/97020391/147942487-c441b900-05e2-4148-a71f-98ada239c2d5.png)
@@ -117,6 +115,8 @@ It has the following elements:
 
 
 #### 4.6.4. Azure Service Fabric Cluster
+
+![image](https://user-images.githubusercontent.com/97020391/147940564-44f77200-a1fe-40ef-b441-a567f38ed6b6.png)
 
 |     Parameter        | Number|
 | -------------------- | ----- |
