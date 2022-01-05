@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CountryViewModel>
+
+@{
+    ViewData["CountryDetails"] = "Index";
+}
+<style type="text/css">.rounded-circle { }</style>
+
+<h2>Index</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capital)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th>
+                Currency 
+            </th>
+            <th>
+                Flag
+            </th>
+       </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Capital)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Region)
+                </td>
+                     @foreach (var currency in item.Currency)
+                     {
+                         <td>
+                             @Html.DisplayFor(modelItem => currency.Name)
+                             @Html.DisplayFor(modelItem => currency.Symbol)
+                         </td>
+                     }
+                 <td>  
+                        <img src=@item.Flag
+                             class="rounded-circle"   
+                             height="40" width="40"   
+                             asp-append-version="true" />  
+     
+                    </td>
+            </tr>
+        }
+    </tbody>
+</table>

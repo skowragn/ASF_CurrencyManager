@@ -1,0 +1,56 @@
+﻿@model CurrencyListViewModel
+@{
+    ViewData["Title"] = "Currency Manager";
+}
+
+<div ng-controller="CurrencyAppController" ng-init="refresh()">
+    <div class="container-fluid">
+        <div class="text-center">
+            <h1 class="display-4">Currency</h1>
+            <form asp-action="Index" asp-controller="currency" method="post"> 
+            <div class="row">
+                <div class="col-md-4">
+                    <select id="drpEmpList" class="form-control" asp-for="Id" ng-model="item" asp-items="@(new SelectList(Model.CurrencyList, "CurrencyName", "CurrencyName"))">
+                        <option value="">--Select--</option>
+                    </select>
+                    <input type="hidden" asp-for="Id"/>
+                </div>
+                <div class="col-md-6 form-group">
+                    <input id="txtAdd" type="text" class="form-control" placeholder="Add currency here option" ng-model="item"/>
+                </div>
+                <button id="btnAdd" class="btn btn-success" ng-click="add(item)">
+                    Add
+                </button>
+            </div>
+            </form>
+        </div>
+    </div>
+    
+    <hr/>
+    <div class="row">
+        <div class="col-md-8 col-xs-offset-2">
+            <div class="row">
+                <div class="col-md-4">
+                    Add currency
+                </div>
+            </div>
+            <div class="row top-buffer" ng-repeat="currency in currencies.data">
+                <div class="col-md-8">
+                    <button class="btn btn-success text-left btn-block" ng-click="add(currency.key)">
+                        <span class="float-left">
+                            {{currency.key}}
+                        </span>
+                        <span class="badge float-right">
+                            {{currency.value}} Currencies
+                        </span>
+                    </button>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-danger float-right btn-block" ng-click="remove(currency.key)">
+                        Remove
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
