@@ -49,6 +49,10 @@ with Visual Studio 2022:
 ![image](https://user-images.githubusercontent.com/97020391/147924424-1deed3bd-8c90-4152-89eb-a9d6600dd1f1.png)
 
 
+### 3.1 Azure Service Fabric - sevaral application version on one cluster
+![image](https://user-images.githubusercontent.com/97020391/148247465-d8521023-6e74-447e-8469-74aa90923d2a.png)
+
+
 ## 4. Currency Manager project
 The current project consists of:
 
@@ -125,3 +129,13 @@ It has the following elements:
 | Services             |     3 |
 | Partitions           |     5 |
 | Replicas             |    11 |
+
+#### 4.6.5. CurrencyManager - current solution
+
+![image](https://user-images.githubusercontent.com/97020391/148247267-b1ccea4a-40fc-485d-b51b-15fda68977d2.png)
+
+![image](https://user-images.githubusercontent.com/97020391/148247310-3ad3ee20-3f2b-43cc-b390-3929e842f6b0.png)
+
+![image](https://user-images.githubusercontent.com/97020391/148247324-d446b479-72b9-4dc3-a58c-6906f17fb559.png)
+
+
