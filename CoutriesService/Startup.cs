@@ -19,7 +19,8 @@ namespace CountriesService
         public IConfiguration Configuration { get; }
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpClient<ICountryList, CountryListService>();
+            services.AddHttpClient();
+            services.AddScoped<ICountryList, CountryListService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

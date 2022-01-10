@@ -11,27 +11,24 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using CurrencyManagerWeb.Interfaces;
 using CurrencyManagerWeb.Models;
-using AutoMapper;
 
 namespace CurrencyManagerWeb.Services
 {
     public class CurrencyListService : ICurrencyList
         {
-           private readonly HttpClient _httpClient;
+           private readonly IHttpClientFactory _httpClientFactory;
            private readonly FabricClient _fabricClient;
            private readonly string _reverseProxyBaseUri;
            private readonly StatelessServiceContext _serviceContext;
-           private readonly IMapper _mapper;
            private readonly ICountryList _countryListService;
 
-        public CurrencyListService(HttpClient httpClient, StatelessServiceContext context, FabricClient fabricClient,
-                                   IMapper mapper, ICountryList countryListService)
+        public CurrencyListService(IHttpClientFactory httpClientFactory, StatelessServiceContext context, FabricClient fabricClient,
+                                  ICountryList countryListService)
            {
                _fabricClient = fabricClient;
-               _httpClient = httpClient;
+               _httpClientFactory = httpClientFactory;
                _serviceContext = context;
                _reverseProxyBaseUri = Environment.GetEnvironmentVariable("ReverseProxyBaseUri");
-               _mapper = mapper;
                _countryListService = countryListService;
         }
 
@@ -50,9 +47,10 @@ namespace CurrencyManagerWeb.Services
                    var proxyUrl =
                        $"{proxyAddress}/api/Currency?PartitionKey={((Int64RangePartitionInformation) partition.PartitionInformation).LowKey}&PartitionKind=Int64Range";
 
-                       using HttpResponseMessage response = await _httpClient.GetAsync(proxyUrl);
+                    var httpClient = _httpClientFactory.CreateClient();
+                    using HttpResponseMessage response = await httpClient.GetAsync(proxyUrl);
 
-                       if (response.StatusCode != HttpStatusCode.OK)
+                       if (!response.IsSuccessStatusCode)
                        {
                            continue;
                        }
@@ -83,24 +81,6 @@ namespace CurrencyManagerWeb.Services
             return results;
            }
 
-           private async Task<List<KeyValuePair<string, CurrencyViewModel>>> GetCurrencyListViewModels(List<KeyValuePair<string, int>> result)
-        {
-            var finalCurrencyResults = new List<KeyValuePair<string, CurrencyViewModel>>();
-
-            var countryList = await _countryListService.GetAsync();
-
-            foreach (var currency in result)
-            {
-                var selectedCountry =
-                    countryList.Where(item => item.Currency.FirstOrDefault().Name == currency.Key)
-                               .Select(item => new KeyValuePair<string, CurrencyViewModel>(currency.Key, CreateCurrency(currency, item))).ToList();
-
-                finalCurrencyResults.AddRange(selectedCountry);
-            }
-
-            return finalCurrencyResults;
-        }
-        
         public async Task<HttpStatusCode> PutAsync(string name)
         {
             Uri proxyAddress = GetProxyAddress();
@@ -112,41 +92,21 @@ namespace CurrencyManagerWeb.Services
             StringContent putContent = new StringContent($"{{ 'name' : '{name}' }}", Encoding.UTF8, "application/json");
             putContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-            using (HttpResponseMessage response = await _httpClient.PutAsync(proxyUrl, putContent))
-            {
-                return response.StatusCode;
-            }
+            var httpClient = _httpClientFactory.CreateClient();
+            using HttpResponseMessage response = await httpClient.PutAsync(proxyUrl, putContent);
+            return response.StatusCode;
         }
 
         public async Task<HttpStatusCode> DeleteAsync(string name)
         {
             Uri proxyAddress = GetProxyAddress();
+            var partitionKey = GetPartitionKey(name);
+            var proxyUrl = $"{proxyAddress}/api/Currency/{name}?PartitionKey={partitionKey}&PartitionKind=Int64Range";
 
-            long partitionKey = GetPartitionKey(name);
-
-            string proxyUrl = $"{proxyAddress}/api/Currency/{name}?PartitionKey={partitionKey}&PartitionKind=Int64Range";
-
-            using (HttpResponseMessage response = await _httpClient.DeleteAsync(proxyUrl))
-            {
-                if (response.StatusCode != HttpStatusCode.OK)
-                {
-                    return response.StatusCode;
-                }
-            }
-            return HttpStatusCode.OK;
+            var httpClient = _httpClientFactory.CreateClient();
+            using HttpResponseMessage response = await httpClient.DeleteAsync(proxyUrl);
+            return response.IsSuccessStatusCode ? HttpStatusCode.OK : response.StatusCode;
         }
-
-        private static CurrencyViewModel CreateCurrency(KeyValuePair<string, int> basicCurrency, CountryViewModel country)
-        {
-            return new CurrencyViewModel()
-            {
-                CurrencyName = basicCurrency.Key,
-                CurrencyFlag = country.Flag,
-                CurrencyQuantity = basicCurrency.Value,
-                CurrencySymbol = (country.Currency != null && country.Currency.Count() > 1) ? country.Currency.FirstOrDefault().Symbol : string.Empty
-            };
-        }
-
         private Uri GetProxyAddress()
         {
            Uri serviceName = CurrencyManagerWeb.GetCurrencyManagerServiceName(_serviceContext);

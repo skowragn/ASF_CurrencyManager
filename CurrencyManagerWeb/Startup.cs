@@ -23,13 +23,15 @@ namespace CurrencyManagerWeb
             var mapperConfig = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new CountriesMappingProfile());
-                //cfg.AddProfile(new CurrencyMappingProfile());
-            });
+           });
 
             IMapper mapper = mapperConfig.CreateMapper();
             services.AddSingleton(mapper);
-            services.AddHttpClient<ICurrencyList, CurrencyListService>();
-            services.AddHttpClient<ICountryList, CountryListService>();
+
+            services.AddHttpClient();
+            services.AddScoped<ICurrencyList, CurrencyListService>();
+            services.AddScoped<ICountryList, CountryListService>();
+           
             services.AddControllersWithViews();
         }
 
