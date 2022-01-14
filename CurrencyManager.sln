@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "CurrencyManager", "CurrencyManager\CurrencyManager.sfproj", "{1728C4B6-AB56-4533-9CDB-377DA9E6BDC0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyManagerService", "CurrencyManagerCore\CurrencyManagerService.csproj", "{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyManagerWeb", "CurrencyManagerWeb\CurrencyManagerWeb.csproj", "{1FB120EF-AA9D-4078-BAD2-58112259B9CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountriesService", "CoutriesService\CountriesService.csproj", "{66D74C57-D666-49F6-8494-49AD460A160E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyManagerService", "CurrencyManagerService\CurrencyManagerService.csproj", "{AE3999E5-CC85-483C-9DB3-2DF76C82519E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +31,6 @@ Global
 		{1728C4B6-AB56-4533-9CDB-377DA9E6BDC0}.Release|x64.ActiveCfg = Release|x64
 		{1728C4B6-AB56-4533-9CDB-377DA9E6BDC0}.Release|x64.Build.0 = Release|x64
 		{1728C4B6-AB56-4533-9CDB-377DA9E6BDC0}.Release|x64.Deploy.0 = Release|x64
-		{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}.Debug|x64.Build.0 = Debug|Any CPU
-		{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}.Release|x64.ActiveCfg = Release|Any CPU
-		{AAF1DA19-354D-46AC-BB4A-7F54F22950D9}.Release|x64.Build.0 = Release|Any CPU
 		{1FB120EF-AA9D-4078-BAD2-58112259B9CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1FB120EF-AA9D-4078-BAD2-58112259B9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FB120EF-AA9D-4078-BAD2-58112259B9CF}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -55,6 +47,14 @@ Global
 		{66D74C57-D666-49F6-8494-49AD460A160E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{66D74C57-D666-49F6-8494-49AD460A160E}.Release|x64.ActiveCfg = Release|Any CPU
 		{66D74C57-D666-49F6-8494-49AD460A160E}.Release|x64.Build.0 = Release|Any CPU
+		{AE3999E5-CC85-483C-9DB3-2DF76C82519E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3999E5-CC85-483C-9DB3-2DF76C82519E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3999E5-CC85-483C-9DB3-2DF76C82519E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AE3999E5-CC85-483C-9DB3-2DF76C82519E}.Debug|x64.Build.0 = Debug|Any CPU
+		{AE3999E5-CC85-483C-9DB3-2DF76C82519E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3999E5-CC85-483C-9DB3-2DF76C82519E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE3999E5-CC85-483C-9DB3-2DF76C82519E}.Release|x64.ActiveCfg = Release|Any CPU
+		{AE3999E5-CC85-483C-9DB3-2DF76C82519E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

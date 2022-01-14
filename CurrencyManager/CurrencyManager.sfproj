@@ -38,7 +38,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoutriesService\CountriesService.csproj" />
-    <ProjectReference Include="..\CurrencyManagerCore\CurrencyManagerService.csproj" />
     <ProjectReference Include="..\CurrencyManagerWeb\CurrencyManagerWeb.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
