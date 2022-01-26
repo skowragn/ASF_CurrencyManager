@@ -134,6 +134,11 @@ It has the following elements:
 | Partitions           |     5 |
 | Replicas             |    11 |
 
+
+![image](https://user-images.githubusercontent.com/97020391/151201515-d169974e-6e88-4f8c-9352-942366e5e17b.png)
+
+
+
 #### 4.6.5. CurrencyManager - current solution
 
 ![image](https://user-images.githubusercontent.com/97020391/148247267-b1ccea4a-40fc-485d-b51b-15fda68977d2.png)
