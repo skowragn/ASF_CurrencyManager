@@ -64,6 +64,10 @@ It has the following elements:
 - Stateful ASP.NET Core 5 Web API service  - **CurrencyManagerService**
 - Stateless ASP.NET Core 5 MVC service - **CurrencyManagerWeb**
 
+
+![image](https://user-images.githubusercontent.com/97020391/151197774-310d2a52-02e9-42c2-be6e-154c2851ea2d.png)
+
+
 ![image](https://user-images.githubusercontent.com/97020391/147924520-5f7c8eff-4792-4948-af1a-25310d23812a.png)
 
 ![image](https://user-images.githubusercontent.com/97020391/147941627-68bece4c-9695-49ea-909f-e380b2303700.png)
