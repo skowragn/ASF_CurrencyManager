@@ -55,9 +55,13 @@ with Visual Studio 2022:
 ![image](https://user-images.githubusercontent.com/97020391/147924424-1deed3bd-8c90-4152-89eb-a9d6600dd1f1.png)
 
 
-### 3.1 Azure Service Fabric - sevaral application version on one cluster
+### 3.1 Azure Service Fabric - several application version on one cluster
 ![image](https://user-images.githubusercontent.com/97020391/148247465-d8521023-6e74-447e-8469-74aa90923d2a.png)
 
+### 3.2 Azure Service Fabric - monitoring and diagnostic
+- Application Monitoring
+- Cluster Monitoring
+- Infrustructure Monitoring
 
 ## 4. Currency Manager project
 The current project consists of:
