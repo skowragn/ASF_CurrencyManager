@@ -7,6 +7,9 @@ Nowadays it powers many Azure Cloud and Microsoft services.
 
 ![image](https://user-images.githubusercontent.com/97020391/147913169-7a4e4af3-ac80-41b2-a000-66d669b7566b.png)
 
+![image](https://user-images.githubusercontent.com/97020391/151328873-d70de507-f41d-4090-88a9-70e877ef8cee.png)
+
+
 - Azure SQL Database
 - Azure Cosmos DB
 - Azure IoT Hub
