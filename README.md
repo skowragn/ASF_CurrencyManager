@@ -177,3 +177,23 @@ It has the following elements:
 ![image](https://user-images.githubusercontent.com/97020391/148247324-d446b479-72b9-4dc3-a58c-6906f17fb559.png)
 
 
+## 5. Deployemnt into Azure Cloud
+### 5.1 Prerequisites
+- Azure Cloud subscribtion with VS Subscription - 200$ per month
+- Service Fabric managed clusters
+
+- ![image](https://user-images.githubusercontent.com/97020391/151335837-8380927c-109b-46e3-b7a9-443f5944989d.png)
+
+
+### 5.2 VS 2020 usage
+
+![image](https://user-images.githubusercontent.com/97020391/151335748-68e6e727-c692-4ca5-aad7-48f6e21b2036.png)
+
+
+### 5.3 Azure Portal usage
+### 5.4 ARM Template usage
+
+
+
+
+
