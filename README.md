@@ -64,6 +64,12 @@ with Visual Studio 2022:
 - Infrustructure Monitoring
 
 ## 4. Currency Manager project
+### 4.1 Prerequisites
+- Visual Studio 2022 Pro: https://visualstudio.microsoft.com/pl/vs/
+- Azure Service Fabric SDK and Tools: https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started
+
+
+### 4.2 Project Overview
 The current project consists of:
 
 - One Azure Service Fabric application - Currency Manager
