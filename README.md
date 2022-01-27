@@ -99,7 +99,7 @@ It has the following elements:
 
 ![image](https://user-images.githubusercontent.com/97020391/147941627-68bece4c-9695-49ea-909f-e380b2303700.png)
 
-![image](https://user-images.githubusercontent.com/97020391/147940439-d6c93259-6599-4464-b0bf-e0c990e89175.png)
+![image](https://user-images.githubusercontent.com/97020391/151371488-8d20db75-5e3d-4c9d-8e64-de19a05b2a9e.png)
 
 ![image](https://user-images.githubusercontent.com/97020391/147924511-d1b70def-0043-42f6-8c44-99410460cece.png)
 
@@ -112,7 +112,12 @@ It has the following elements:
 ### 4.3. Currency Manager – LocalNode5.xml
 ![image](https://user-images.githubusercontent.com/97020391/147942487-c441b900-05e2-4148-a71f-98ada239c2d5.png)
 
-![image](https://user-images.githubusercontent.com/97020391/151334871-931686ee-cb52-4e41-87d7-cf4976daae6b.png)
+![image](https://user-images.githubusercontent.com/97020391/151354539-f26f68f1-ab03-4438-8c74-043f1d53d4cd.png)
+
+![image](https://user-images.githubusercontent.com/97020391/151370595-50a6426a-a564-4055-94a9-bf70e3c64332.png)
+
+![image](https://user-images.githubusercontent.com/97020391/151370526-95a49f6a-5dfa-4246-a599-e05dfdb216d5.png)
+
 
 ### 4.4. CurrencyManagerWeb - ASP.NET Core Stateless service
 ![image](https://user-images.githubusercontent.com/97020391/147942555-2f84c4ff-0a5f-4467-bcc2-a9855241d8c3.png)
