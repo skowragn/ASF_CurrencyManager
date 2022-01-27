@@ -182,17 +182,61 @@ It has the following elements:
 - Azure Cloud subscribtion with VS Subscription - 200$ per month
 - Service Fabric managed clusters
 
-- ![image](https://user-images.githubusercontent.com/97020391/151335837-8380927c-109b-46e3-b7a9-443f5944989d.png)
+Note:
+- Service Fabric managed clusters are an evolution of the Azure Service Fabric cluster resource model
+
+- The ARM template for a Service Fabric managed cluster is about 100 lines of JSON, versus some 1000 lines required to define a typical Service Fabric cluster
+
+'The Azure Resource Model (ARM) template for traditional Service Fabric clusters requires you to define a cluster resource alongside a number of supporting resources, all of which must be "wired up" correctly in order for the cluster and your services to function properly. 
+In contrast, the encapsulation model for Service Fabric managed clusters consists of a single, Service Fabric managed cluster resource. All of the underlying resources for the cluster are abstracted away and managed by Azure on your behalf.'
+
+![image](https://user-images.githubusercontent.com/97020391/151338781-d0cdb4b3-3161-4684-ba9a-318107f012f0.png)
+
+https://docs.microsoft.com/en-us/azure/service-fabric/overview-managed-cluster 
+
 
 
 ### 5.2 VS 2020 usage
 
+
 ![image](https://user-images.githubusercontent.com/97020391/151335748-68e6e727-c692-4ca5-aad7-48f6e21b2036.png)
+
+![image](https://user-images.githubusercontent.com/97020391/151338971-9d71b037-7884-49ed-9413-faddfbd0c466.png)
+
+#### 5.2.1 Cloud.xml
+
+![image](https://user-images.githubusercontent.com/97020391/151339033-bdc11e4f-72f6-46fe-bf98-af1c82b03602.png)
+
+![image](https://user-images.githubusercontent.com/97020391/151339130-f3055db0-ed86-400d-aa02-bc66901f07ba.png)
+
+![image](https://user-images.githubusercontent.com/97020391/151339149-4ad1b8fb-62c0-43e7-9209-ec31e566e792.png)
 
 
 ### 5.3 Azure Portal usage
 ### 5.4 ARM Template usage
 
+![image](https://user-images.githubusercontent.com/97020391/151342142-f0a135fa-e6e1-4533-8354-f9b19e21b069.png)
+
+
+
+## 6. Cluster - Azure Cloud
+![image](https://user-images.githubusercontent.com/97020391/151339893-12b4f460-2847-46fa-949f-b6afd1fe812e.png)
+![image](https://user-images.githubusercontent.com/97020391/151339909-4eaad835-d760-47a7-a73e-c4d6d5415355.png)
+
+
+![image](https://user-images.githubusercontent.com/97020391/151340012-6f6652ba-cc99-4b63-8f1d-a53efe8d8381.png)
+
+![image](https://user-images.githubusercontent.com/97020391/151347863-1b7ae26d-b05f-4dcc-bd31-0d69da4de809.png)
+
+
+![image](https://user-images.githubusercontent.com/97020391/151353637-a2874b89-5f5b-4d48-b4c9-9a67361a3694.png)
+
+
+![image](https://user-images.githubusercontent.com/97020391/151353505-514783a1-1757-4623-815c-ea1483165fec.png)
+
+
+
+![image](https://user-images.githubusercontent.com/97020391/151340571-ab1b9178-2ea0-438b-bd9f-34960eb62136.png)
 
 
 
