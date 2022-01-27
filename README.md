@@ -46,6 +46,16 @@ It can run the folowing services/processes:
 - Guest executable - self-contained applications (e.g. NodeJS or Java)
 - Containers (with Docker image)
 
+![image](https://user-images.githubusercontent.com/97020391/151333252-13f99c2b-bff9-49ce-8591-20245af6d92f.png)
+
+
+
+### 3.1 Azure Service Fabric - Application Model
+![image](https://user-images.githubusercontent.com/97020391/151333428-f3d0842b-2bee-407d-b85f-013e3c3723d0.png)
+
+![image](https://user-images.githubusercontent.com/97020391/151333530-9475cd89-2e5d-4969-8cc1-0e49a5982d9b.png)
+
+
 with Visual Studio 2022:
 
 ![image](https://user-images.githubusercontent.com/97020391/147924407-06b5a7e8-4f3d-496d-b8e9-517c8a3c9d4a.png)
@@ -55,10 +65,10 @@ with Visual Studio 2022:
 ![image](https://user-images.githubusercontent.com/97020391/147924424-1deed3bd-8c90-4152-89eb-a9d6600dd1f1.png)
 
 
-### 3.1 Azure Service Fabric - several application version on one cluster
+### 3.2 Azure Service Fabric - several application version on one cluster
 ![image](https://user-images.githubusercontent.com/97020391/148247465-d8521023-6e74-447e-8469-74aa90923d2a.png)
 
-### 3.2 Azure Service Fabric - monitoring and diagnostic
+### 3.3 Azure Service Fabric - monitoring and diagnostic
 - Application Monitoring
 - Cluster Monitoring
 - Infrustructure Monitoring
