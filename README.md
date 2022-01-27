@@ -117,6 +117,10 @@ It has the following elements:
 ![image](https://user-images.githubusercontent.com/97020391/147942570-a2ba5d61-cdf6-4c0c-bbd9-c87d42a8261e.png)
 ![image](https://user-images.githubusercontent.com/97020391/147942183-60d4820b-6bc2-4e59-91a7-cd6d6c5955d7.png)
 
+![image](https://user-images.githubusercontent.com/97020391/151334871-931686ee-cb52-4e41-87d7-cf4976daae6b.png)
+
+
+
 ### 4.5. CurrencyManagerService - ASP.NET Core Stateful service
 ![image](https://user-images.githubusercontent.com/97020391/147942628-0891782c-364d-4923-8db4-b4b49f3dcae7.png)
 ![image](https://user-images.githubusercontent.com/97020391/147942648-cd31596c-8738-4bbb-89ed-f9a300f44717.png)
