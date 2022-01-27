@@ -112,14 +112,12 @@ It has the following elements:
 ### 4.3. Currency Manager – LocalNode5.xml
 ![image](https://user-images.githubusercontent.com/97020391/147942487-c441b900-05e2-4148-a71f-98ada239c2d5.png)
 
+![image](https://user-images.githubusercontent.com/97020391/151334871-931686ee-cb52-4e41-87d7-cf4976daae6b.png)
+
 ### 4.4. CurrencyManagerWeb - ASP.NET Core Stateless service
 ![image](https://user-images.githubusercontent.com/97020391/147942555-2f84c4ff-0a5f-4467-bcc2-a9855241d8c3.png)
 ![image](https://user-images.githubusercontent.com/97020391/147942570-a2ba5d61-cdf6-4c0c-bbd9-c87d42a8261e.png)
 ![image](https://user-images.githubusercontent.com/97020391/147942183-60d4820b-6bc2-4e59-91a7-cd6d6c5955d7.png)
-
-![image](https://user-images.githubusercontent.com/97020391/151334871-931686ee-cb52-4e41-87d7-cf4976daae6b.png)
-
-
 
 ### 4.5. CurrencyManagerService - ASP.NET Core Stateful service
 ![image](https://user-images.githubusercontent.com/97020391/147942628-0891782c-364d-4923-8db4-b4b49f3dcae7.png)
