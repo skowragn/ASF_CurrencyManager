@@ -68,6 +68,7 @@ with Visual Studio 2022:
 - Visual Studio 2022 Pro: https://visualstudio.microsoft.com/pl/vs/
 - Azure Service Fabric SDK and Tools: https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started
 
+See: ## 2. Azure Service Fabric Version 
 
 ### 4.2 Project Overview
 The current project consists of:
