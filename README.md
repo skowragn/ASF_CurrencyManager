@@ -27,6 +27,11 @@ Nowadays it powers many Azure Cloud and Microsoft services.
 - Core Azure Services
 - Azure Archive Storage
 
+
+![image](https://user-images.githubusercontent.com/97020391/151329150-a071d8d0-a540-43b9-b01d-250f5526c4d9.png)
+
+
+
 ## 2. Azure Service Fabric Version
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-get-started
 ![image](https://user-images.githubusercontent.com/97020391/147914744-e0bc9a27-fc21-42ad-85fa-dca359a0afc4.png)
