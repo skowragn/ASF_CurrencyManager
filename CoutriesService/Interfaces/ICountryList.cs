@@ -7,6 +7,5 @@ namespace CountriesService.Interfaces
     public interface ICountryList
     {
         Task<IEnumerable<CountryDto>> GetAsync();
-        Task<CountryDto> GetAsync(string countryName);
     }
 }

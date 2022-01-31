@@ -4,7 +4,6 @@ using System.Linq;
 using System.Fabric;
 using System.Fabric.Query;
 using System.Net.Http;
-using System.Net;
 using System.Threading.Tasks;
 using CurrencyManagerWeb.Interfaces;
 using CurrencyManagerWeb.Models;
@@ -85,26 +84,6 @@ namespace CurrencyManagerWeb.Services
             }
 
             throw new HttpRequestException($"Invalid status code in the HttpResponseMessage: {response.StatusCode}.");
-        }
-
-        public async Task<CountryViewModel> GetCountryDetails(string countryName)
-        {
-            Uri proxyAddress = GetProxyAddress();
-
-            var httpClient = _httpClientFactory.CreateClient();
-            var response = await httpClient.GetAsync($"{proxyAddress}/api/countries/details?countryName={countryName}");
-            
-            if (response.IsSuccessStatusCode)
-            {
-                var content = await response.Content.ReadAsStringAsync();
-                var countryDto = JsonConvert.DeserializeObject<CountryDto>(content);
-
-                var country = _mapper.Map<CountryViewModel>(countryDto);
-                return country;
-            }
-
-            throw new HttpRequestException($"Invalid status code in the HttpResponseMessage: {response.StatusCode}.");
-
         }
 
         private Uri GetProxyAddress()

@@ -21,6 +21,7 @@ namespace CurrencyManagerWeb.Services
            private readonly string _reverseProxyBaseUri;
            private readonly StatelessServiceContext _serviceContext;
            private readonly ICountryList _countryListService;
+           private IEnumerable<CountryViewModel> _countriesList;
 
         public CurrencyListService(IHttpClientFactory httpClientFactory, StatelessServiceContext context, FabricClient fabricClient,
                                   ICountryList countryListService)
@@ -30,7 +31,8 @@ namespace CurrencyManagerWeb.Services
                _serviceContext = context;
                _reverseProxyBaseUri = Environment.GetEnvironmentVariable("ReverseProxyBaseUri");
                _countryListService = countryListService;
-        }
+               _countriesList = new List<CountryViewModel>();
+           }
 
            public async Task<IEnumerable<KeyValuePair<string, int>>> GetAsync()
            {
@@ -68,9 +70,10 @@ namespace CurrencyManagerWeb.Services
            {
                var results = new CurrencyListViewModel();
 
-               var countryList = await _countryListService.GetAsync();
+               if(!_countriesList.Any())
+                _countriesList = await _countryListService.GetAsync();
 
-               var items = countryList.Take(10).Select((item, counter) => new ItemList()
+               var items = _countriesList.Take(10).Select((item, counter) => new ItemList()
                {
                    CurrencyName = item.Currency.FirstOrDefault().Name,
                    Value = counter + 1
@@ -89,7 +92,7 @@ namespace CurrencyManagerWeb.Services
 
             string proxyUrl = $"{proxyAddress}/api/Currency/{name}?PartitionKey={partitionKey}&PartitionKind=Int64Range";
 
-            StringContent putContent = new StringContent($"{{ 'name' : '{name}' }}", Encoding.UTF8, "application/json");
+            StringContent putContent = new($"{{ 'name' : '{name}' }}", Encoding.UTF8, "application/json");
             putContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var httpClient = _httpClientFactory.CreateClient();

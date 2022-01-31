@@ -33,11 +33,13 @@
     <None Include="StartupServices.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CurrencyManagerService.csproj" />
     <Content Include="packages.config" />
     <Content Include="StartupServiceParameters\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CoutriesService\CountriesService.csproj" />
+    <ProjectReference Include="..\CurrencyManagerService\CurrencyManagerService.csproj" />
     <ProjectReference Include="..\CurrencyManagerWeb\CurrencyManagerWeb.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />

@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using CountriesService.Interfaces;
 using CountriesService.Services;
+using CountriesService.Repositories;
 
 namespace CountriesService
 {
@@ -20,6 +21,7 @@ namespace CountriesService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient();
+            services.AddScoped<ICountriesRepository, CountriesRepository>();
             services.AddScoped<ICountryList, CountryListService>();
 
             services.AddControllers();

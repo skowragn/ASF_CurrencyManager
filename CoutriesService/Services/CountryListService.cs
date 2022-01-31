@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -11,37 +10,17 @@ namespace CountriesService.Services
 {
     public class CountryListService : ICountryList
     {
-        private readonly HttpClient _httpClient;
+        private readonly ICountriesRepository _countriesRepository;
 
-        public CountryListService(HttpClient httpClient)
+        public CountryListService(ICountriesRepository countriesRepository)
         {
-            _httpClient = httpClient;
+            _countriesRepository = countriesRepository;
         }
 
         public async Task<IEnumerable<CountryDto>> GetAsync()
         {
-
-            var response = await _httpClient.GetAsync("https://restcountries.com/v3.1/all");
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new HttpRequestException($"Invalid status code in the HttpResponseMessage: {response.StatusCode}.");
-
-            var content = await response.Content.ReadAsStringAsync();
-            var countryList = JsonConvert.DeserializeObject<IEnumerable<CountryDto>>(content);
+            var countryList = await _countriesRepository.GetCountriesAsync();
             return countryList;
-        }
-
-        public async Task<CountryDto> GetAsync(string countryName)
-        {
-            var response = await _httpClient.GetAsync($"https://restcountries.eu/rest/v2/name/{countryName}");
-
-            if (response.StatusCode != HttpStatusCode.OK)
-                throw new HttpRequestException(
-                    $"Invalid status code in the HttpResponseMessage: {response.StatusCode}.");
-
-            var content = await response.Content.ReadAsStringAsync();
-            var countryList = JsonConvert.DeserializeObject<IEnumerable<CountryDto>>(content);
-            return countryList != null ? countryList.FirstOrDefault() : new CountryDto();
         }
     }
 }

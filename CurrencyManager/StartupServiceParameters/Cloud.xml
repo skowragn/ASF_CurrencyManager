@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StartupServices xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
-    <Parameter Name="CurrencyManagerService_PartitionCount" Value="1" />
-    <Parameter Name="CurrencyManagerService_MinReplicaSetSize" Value="3" />
-    <Parameter Name="CurrencyManagerService_TargetReplicaSetSize" Value="3" />
+    <Parameter Name="CurrencyManager_PartitionCount" Value="3" />
+    <Parameter Name="CurrencyManager_MinReplicaSetSize" Value="1" />
+    <Parameter Name="CurrencyManager_TargetReplicaSetSize" Value="3" />
+    <Parameter Name="CountriesService_PartitionCount" Value="1" />
+    <Parameter Name="CountriesService_MinReplicaSetSize" Value="1" />
+    <Parameter Name="CountriesService_TargetReplicaSetSize" Value="1" />
     <Parameter Name="CurrencyManagerWeb_InstanceCount" Value="1" />
   </Parameters>
 </StartupServices>

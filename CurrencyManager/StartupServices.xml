@@ -1,23 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StartupServicesManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
-    <Parameter Name="CurrencyManagerService_MinReplicaSetSize" DefaultValue="3" />
-    <Parameter Name="CurrencyManagerService_PartitionCount" DefaultValue="1" />
-    <Parameter Name="CurrencyManagerService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="CurrencyManager_PartitionCount" DefaultValue="1" />
+    <Parameter Name="CurrencyManager_MinReplicaSetSize" DefaultValue="1" />
+    <Parameter Name="CurrencyManager_TargetReplicaSetSize" DefaultValue="1" />
     <Parameter Name="CountriesService_PartitionCount" DefaultValue="1" />
     <Parameter Name="CountriesService_MinReplicaSetSize" DefaultValue="1" />
     <Parameter Name="CountriesService_TargetReplicaSetSize" DefaultValue="1" />
     <Parameter Name="CurrencyManagerWeb_InstanceCount" DefaultValue="-1" />
   </Parameters>
   <Services>
-    <Service Name="CurrencyManagerService" ServicePackageActivationMode="ExclusiveProcess">
-      <StatefulService ServiceTypeName="CurrencyManagerServiceType" TargetReplicaSetSize="[CurrencyManagerService_TargetReplicaSetSize]" MinReplicaSetSize="[CurrencyManagerService_MinReplicaSetSize]">
-        <UniformInt64Partition PartitionCount="[CurrencyManagerService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
-      </StatefulService>
-    </Service>
     <Service Name="CountriesService" ServicePackageActivationMode="ExclusiveProcess">
       <StatefulService ServiceTypeName="CountriesServiceType" TargetReplicaSetSize="[CountriesService_TargetReplicaSetSize]" MinReplicaSetSize="[CountriesService_MinReplicaSetSize]">
-        <UniformInt64Partition PartitionCount="[CountriesService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+        <UniformInt64Partition PartitionCount="[CountriesService_PartitionCount]" LowKey="0" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+    <Service Name="CurrencyManagerService" ServicePackageActivationMode="ExclusiveProcess">
+      <StatefulService ServiceTypeName="CurrencyManagerServiceType" TargetReplicaSetSize="[CurrencyManager_TargetReplicaSetSize]" MinReplicaSetSize="[CurrencyManager_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[CurrencyManager_PartitionCount]" LowKey="0" HighKey="9223372036854775807" />
       </StatefulService>
     </Service>
     <Service Name="CurrencyManagerWeb" ServicePackageActivationMode="ExclusiveProcess">

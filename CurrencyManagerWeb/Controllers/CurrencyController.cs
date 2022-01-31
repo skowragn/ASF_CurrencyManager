@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using CurrencyManagerWeb.Models;
 using System.Threading.Tasks;
 using CurrencyManagerWeb.Interfaces;
@@ -17,14 +16,9 @@ namespace CurrencyManagerWeb.Controllers
         }
 
         public async Task<ActionResult> Index()
-        {
-            if (_currencyList.CurrencyList != null)
-                return View(_currencyList);
-            else
-            {
-                _currencyList = await _currencyListService.GetCurrenciesListViewModelInput();
-                return View(_currencyList);
-            }
+        { 
+            _currencyList = await _currencyListService.GetCurrenciesListViewModelInput();
+            return View(_currencyList);
         }
     }
 }
