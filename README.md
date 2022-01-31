@@ -121,7 +121,8 @@ The Currency Manager based on the Quickstart with MS (Voting/.NET Framework 4.7.
 Azure-Samples/\service-fabric-dotnet-quickstart: https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ### 4.2 Project Overview
-The current project consists of:
+The current project is based on the Azure Service Fabric Application Model (ASP.NET Core stateful and stateless services).
+It consists of:
 
 - One Azure Service Fabric application - Currency Manager
 
@@ -186,26 +187,32 @@ InstanceCount| 1 |
 ### 4.3. Currency Manager – LocalNode5.xml
 ![image](https://user-images.githubusercontent.com/97020391/147942487-c441b900-05e2-4148-a71f-98ada239c2d5.png)
 
+***Figure 17. Currency Manager configuration - LocalNode5.xml***
+
 ![image](https://user-images.githubusercontent.com/97020391/151354539-f26f68f1-ab03-4438-8c74-043f1d53d4cd.png)
+
+***Figure 18. Application Local Cluster overview***
 
 ![image](https://user-images.githubusercontent.com/97020391/151370595-50a6426a-a564-4055-94a9-bf70e3c64332.png)
 
+***Figure 19. Application Local Cluster - particions and replicas with 5 Nodes Cluster***
+
 ![image](https://user-images.githubusercontent.com/97020391/151370526-95a49f6a-5dfa-4246-a599-e05dfdb216d5.png)
 
-***Figure 17. Currency Manager configuration - LocalNode5.xml***
+***Figure 20. Application Local Cluster - particions and replicas with 5 Nodes Cluster - with Primary and Secondary replicas details***
 
 ### 4.4. CurrencyManagerWeb - ASP.NET Core Stateless service
 ![image](https://user-images.githubusercontent.com/97020391/147942555-2f84c4ff-0a5f-4467-bcc2-a9855241d8c3.png)
 ![image](https://user-images.githubusercontent.com/97020391/147942570-a2ba5d61-cdf6-4c0c-bbd9-c87d42a8261e.png)
 
-***Figure 18. Currency Manager - ASP.NET Core 5 MVC stateless reliable service***
+***Figure 21. Currency Manager - ASP.NET Core 5 MVC stateless reliable service***
 
 
 ### 4.5. CurrencyManagerService - ASP.NET Core Stateful service
 ![image](https://user-images.githubusercontent.com/97020391/147942628-0891782c-364d-4923-8db4-b4b49f3dcae7.png)
 ![image](https://user-images.githubusercontent.com/97020391/147942648-cd31596c-8738-4bbb-89ed-f9a300f44717.png)
 
-***Figure 19. Currency Manager - ASP.NET Core 5 Web API stateful reliable service***
+***Figure 22. Currency Manager - ASP.NET Core 5 Web API stateful reliable service***
 
 ### 4.6. Currency Manager - Sum up
 
@@ -238,7 +245,7 @@ InstanceCount| 1 |
 
 ![image](https://user-images.githubusercontent.com/97020391/147940564-44f77200-a1fe-40ef-b441-a567f38ed6b6.png)
 
-***Figure 20. Azure Service Fabric managed cluster***
+***Figure 23. Azure Service Fabric managed cluster***
 
 |     Parameter        | Number|
 | -------------------- | ----- |
@@ -251,26 +258,27 @@ InstanceCount| 1 |
 
 ![image](https://user-images.githubusercontent.com/97020391/151201515-d169974e-6e88-4f8c-9352-942366e5e17b.png)
 
-***Figure 21. Azure Service Fabric managed cluster***
+***Figure 24. Azure Service Fabric managed cluster with 5 Nodes***
 
 #### 4.6.5. CurrencyManager - current solution
 
 ![image](https://user-images.githubusercontent.com/97020391/148247267-b1ccea4a-40fc-485d-b51b-15fda68977d2.png)
 
-***Figure 22. ***
+***Figure 25. Currency Manager Application - Home View***
 
 
 ![image](https://user-images.githubusercontent.com/97020391/148247310-3ad3ee20-3f2b-43cc-b390-3929e842f6b0.png)
 
 
-***Figure 23. ***
+***Figure 26. Currency Manager Application - Countries View***
 
 
 ![image](https://user-images.githubusercontent.com/97020391/148247324-d446b479-72b9-4dc3-a58c-6906f17fb559.png)
 
-***Figure 24. Currency Manager cluster - current solution***
+***Figure 27. Currency Manager Application - Currencies View***
 
 ## 5. Deployemnt into Azure Cloud
+
 ### 5.1 Prerequisites
 - Azure Cloud subscribtion with VS Subscription - 200$ per month
 - Service Fabric managed clusters
@@ -293,60 +301,72 @@ https://docs.microsoft.com/en-us/azure/service-fabric/overview-managed-cluster
 
 ![image](https://user-images.githubusercontent.com/97020391/151779104-d1afac9a-ef17-454b-a516-40989bfd42a6.png)
 
-***Figure 25. Azure Service Cluster - managed cluster creation from VS 2022***
-
-![image](https://user-images.githubusercontent.com/97020391/151338971-9d71b037-7884-49ed-9413-faddfbd0c466.png)
-
-***Figure 26. ***
+***Figure 28. Azure Service Cluster - managed cluster creation from VS 2022***
 
 #### 5.2.1 Cloud.xml
 
 ![image](https://user-images.githubusercontent.com/97020391/151339033-bdc11e4f-72f6-46fe-bf98-af1c82b03602.png)
 
-***Figure 27. ***
+***Figure 29. Currency Manager configuration - Cloud.xml***
 
 ![image](https://user-images.githubusercontent.com/97020391/151339130-f3055db0-ed86-400d-aa02-bc66901f07ba.png)
 
-***Figure 28. ***
+***Figure 30. Currency Manager configuration - setup remote cluster in VS 2022***
 
 ![image](https://user-images.githubusercontent.com/97020391/151339149-4ad1b8fb-62c0-43e7-9209-ec31e566e792.png)
 
-***Figure 29. Currency Manager configuration - Cloud.xml***
+***Figure 31. Currency Manager configuration - services packages versions from application***
 
 ### 5.3 Azure Portal usage
 
 ![image](https://user-images.githubusercontent.com/97020391/151778734-37235dc7-f2a5-4341-ae8d-9bc1b693bd38.png)
 
+***Figure 32. Currency Manager managed cluster creation - Azure Portal - ASF Cluster***
 
+![image](https://user-images.githubusercontent.com/97020391/151338971-9d71b037-7884-49ed-9413-faddfbd0c466.png)
 
-***Figure 30. Currency Manager managed cluster creation - Azure Portal***
+***Figure 33. Currency Manager managed cluster creation - Azure Portal - Azure Key vault setup for cluster certificates***
 
 ### 5.4 ARM Template usage
 
 ![image](https://user-images.githubusercontent.com/97020391/151342142-f0a135fa-e6e1-4533-8354-f9b19e21b069.png)
-***Figure 20. Currency Manager cluster - ARM Template***
+***Figure 34. Currency Manager cluster - ARM Template***
 
 
 ## 6. Cluster - Azure Cloud
 ![image](https://user-images.githubusercontent.com/97020391/151339893-12b4f460-2847-46fa-949f-b6afd1fe812e.png)
 ![image](https://user-images.githubusercontent.com/97020391/151339909-4eaad835-d760-47a7-a73e-c4d6d5415355.png)
 
+***Figure 35. Currency Manager configuration - Azure Cloud remote cluster with 3 Nodes and supported services (e.g. Azure Key Vault, Azure Storages, LB etc.)***
 
 ![image](https://user-images.githubusercontent.com/97020391/151340012-6f6652ba-cc99-4b63-8f1d-a53efe8d8381.png)
 
+***Figure 36. Currency Manager configuration - Azure Cloud remote cluster with 3 Nodes - Nodes***
+
 ![image](https://user-images.githubusercontent.com/97020391/151347863-1b7ae26d-b05f-4dcc-bd31-0d69da4de809.png)
+
+***Figure 37. Currency Manager configuration - Azure Cloud remote cluster with 3 Nodes - Explorer***
+
+Note: Service Fabric Explorer is using 19080 port:
+
+e.g. http://localhost:19080/Explorer
+
+e.g. https://currencymanager-cl-new.westeurope.cloudapp.azure.com:19080/Explorer
 
 
 ![image](https://user-images.githubusercontent.com/97020391/151353637-a2874b89-5f5b-4d48-b4c9-9a67361a3694.png)
 
 
+***Figure 38. Azure Cloud cluster with 3 Nodes and deployed Currenct Manager application***
+
+
 ![image](https://user-images.githubusercontent.com/97020391/151353505-514783a1-1757-4623-815c-ea1483165fec.png)
 
-
+***Figure 39. Currency Manager configuration - Azure Cloud remote cluster with 3 Nodes - Primary and Secondary replicas on 3 Nodes***
 
 ![image](https://user-images.githubusercontent.com/97020391/151340571-ab1b9178-2ea0-438b-bd9f-34960eb62136.png)
 
-***Figure 21. Currency Manager cluster - on Azure Cloud***
+***Figure 40. Currency Manager cluster - on Azure Cloud***
 
 ## 7. Azure Service Fabric or Kubernetes 
 More details:
