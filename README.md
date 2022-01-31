@@ -68,13 +68,15 @@ More details: https://docs.microsoft.com/en-us/azure/service-fabric/service-fabr
 ![image](https://user-images.githubusercontent.com/97020391/151333428-f3d0842b-2bee-407d-b85f-013e3c3723d0.png)
 
 ![image](https://user-images.githubusercontent.com/97020391/151333530-9475cd89-2e5d-4969-8cc1-0e49a5982d9b.png)
-***Figure 5. Azure Service Fabric -Application Model Big picture***
+
+***Figure 5. Azure Service Fabric - Application Model Big picture***
+
 References: https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-content-roadmap
 
 ![image](https://user-images.githubusercontent.com/97020391/151762619-77b308de-1426-4159-8210-516000c17356.png)
 ![image](https://user-images.githubusercontent.com/97020391/151762643-ca8957dd-32aa-4aa4-8f55-7f2ca7894ff6.png)
-***Figure 6. Azure Service Fabric - Application Model***
-References:
+
+***Figure 6. Azure Service Fabric - Application Version***
 
 ### 3.2 Azure Service Fabric - Visual Studio 2022
 
@@ -83,10 +85,13 @@ References:
 ![image](https://user-images.githubusercontent.com/97020391/147924413-d379d964-cc11-409f-92f6-915ebd3e913d.png)
 
 ![image](https://user-images.githubusercontent.com/97020391/147924424-1deed3bd-8c90-4152-89eb-a9d6600dd1f1.png)
+
 ***Figure 7. Azure Service Fabric - Visual Studio 2022***
 
 ### 3.3 Azure Service Fabric - several application version on one cluster
 ![image](https://user-images.githubusercontent.com/97020391/148247465-d8521023-6e74-447e-8469-74aa90923d2a.png)
+
+***Figure 8. Azure Service Fabric - Application Version on Azure Service Fabric Cluster Explorer***
 
 ### 3.4 Azure Service Fabric - monitoring and diagnostic
 - Application Monitoring
@@ -98,7 +103,7 @@ References:
 
 ![image](https://user-images.githubusercontent.com/97020391/151762960-14406e4f-5944-4c51-98f2-566c134706cd.png)
 
-***Figure 8. Azure Service Fabric - Reference Architecture***
+***Figure 9. Azure Service Fabric - Reference Architecture***
 
 References: https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/microservices/service-fabric
 
@@ -129,27 +134,54 @@ It has the following elements:
 
 ![image](https://user-images.githubusercontent.com/97020391/151197774-310d2a52-02e9-42c2-be6e-154c2851ea2d.png)
 
+***Figure 10. Currency Manager Application Logical Architecture***
 
 ![image](https://user-images.githubusercontent.com/97020391/147924520-5f7c8eff-4792-4948-af1a-25310d23812a.png)
 
+***Figure 11. Azure Service Fabric cluster overview***
+
 ![image](https://user-images.githubusercontent.com/97020391/147941627-68bece4c-9695-49ea-909f-e380b2303700.png)
 
-![image](https://user-images.githubusercontent.com/97020391/151371488-8d20db75-5e3d-4c9d-8e64-de19a05b2a9e.png)
+***Figure 12. Visual Studio 2022 Service Fabric Application solution overview***
+
+**CountriesService Stateful** |  | 
+--- | --- 
+PartitionCount| 1 |
+MinReplicaSetSize| 1 |
+TargetReplicaSetSize| 1 |
+
+**CurrencyManagerService Stateful** |  | 
+--- | --- 
+PartitionCount| 3 |
+MinReplicaSetSize| 1 |
+TargetReplicaSetSize| 3 |
+
+**CurrencyManagerWeb Stateless** |  | 
+--- | --- 
+InstanceCount| 1 |
+
+**Cluster** |**Nodes** | **Application** | **Services** | **Partitions** |  **Replicas** | 
+--- | --- | ---| ---| ---| ---
+| | 5 | 1 | 3 | 5 | 11 (1*1 + 3*3 + 1)
+
+![image](https://user-images.githubusercontent.com/97020391/151776700-c2890358-911c-40e8-8a48-5378c5ddec68.png)
+
+***Figure 13. Local Service Fabric Currency Manager configuration with Azure Service Fabric***
 
 ![image](https://user-images.githubusercontent.com/97020391/147924511-d1b70def-0043-42f6-8c44-99410460cece.png)
 
-***Figure 9. Currency Manager configuration with Azure Service Fabric***
+***Figure 14. Currency Manager Application Version***
 
 ### 4.1. Currency Manager – ApplicationManifest.xml
 
 ![image](https://user-images.githubusercontent.com/97020391/147942280-2e4607b2-bb2b-47f4-b04e-9662e430344b.png)
 
-***Figure 10. Currency Manager configuration - ApplicationManifest.xml***
+***Figure 15. Currency Manager configuration - ApplicationManifest.xml***
 
 ### 4.2. Currency Manager project - StartupServices.xml
 ![image](https://user-images.githubusercontent.com/97020391/147943399-f501e09e-4b61-4f5b-bb43-f82234626f99.png)
 
-***Figure 11. Currency Manager configuration - StartupServices.xml***
+***Figure 16. Currency Manager configuration - StartupServices.xml***
 
 ### 4.3. Currency Manager – LocalNode5.xml
 ![image](https://user-images.githubusercontent.com/97020391/147942487-c441b900-05e2-4148-a71f-98ada239c2d5.png)
@@ -160,20 +192,20 @@ It has the following elements:
 
 ![image](https://user-images.githubusercontent.com/97020391/151370526-95a49f6a-5dfa-4246-a599-e05dfdb216d5.png)
 
-***Figure 12. Currency Manager configuration - LocalNode5.xml***
+***Figure 17. Currency Manager configuration - LocalNode5.xml***
 
 ### 4.4. CurrencyManagerWeb - ASP.NET Core Stateless service
 ![image](https://user-images.githubusercontent.com/97020391/147942555-2f84c4ff-0a5f-4467-bcc2-a9855241d8c3.png)
 ![image](https://user-images.githubusercontent.com/97020391/147942570-a2ba5d61-cdf6-4c0c-bbd9-c87d42a8261e.png)
 
-***Figure 13. Currency Manager - ASP.NET Core 5 MVC stateless reliable service***
+***Figure 18. Currency Manager - ASP.NET Core 5 MVC stateless reliable service***
 
 
 ### 4.5. CurrencyManagerService - ASP.NET Core Stateful service
 ![image](https://user-images.githubusercontent.com/97020391/147942628-0891782c-364d-4923-8db4-b4b49f3dcae7.png)
 ![image](https://user-images.githubusercontent.com/97020391/147942648-cd31596c-8738-4bbb-89ed-f9a300f44717.png)
 
-***Figure 14. Currency Manager - ASP.NET Core 5 Web API stateful reliable service***
+***Figure 19. Currency Manager - ASP.NET Core 5 Web API stateful reliable service***
 
 ### 4.6. Currency Manager - Sum up
 
@@ -206,6 +238,8 @@ It has the following elements:
 
 ![image](https://user-images.githubusercontent.com/97020391/147940564-44f77200-a1fe-40ef-b441-a567f38ed6b6.png)
 
+***Figure 20. Azure Service Fabric managed cluster***
+
 |     Parameter        | Number|
 | -------------------- | ----- |
 | Nodes                |     5 |
@@ -217,17 +251,24 @@ It has the following elements:
 
 ![image](https://user-images.githubusercontent.com/97020391/151201515-d169974e-6e88-4f8c-9352-942366e5e17b.png)
 
-***Figure 15. Currency Manager cluster***
+***Figure 21. Azure Service Fabric managed cluster***
 
 #### 4.6.5. CurrencyManager - current solution
 
 ![image](https://user-images.githubusercontent.com/97020391/148247267-b1ccea4a-40fc-485d-b51b-15fda68977d2.png)
 
+***Figure 22. ***
+
+
 ![image](https://user-images.githubusercontent.com/97020391/148247310-3ad3ee20-3f2b-43cc-b390-3929e842f6b0.png)
+
+
+***Figure 23. ***
+
 
 ![image](https://user-images.githubusercontent.com/97020391/148247324-d446b479-72b9-4dc3-a58c-6906f17fb559.png)
 
-***Figure 16. Currency Manager cluster - current solution***
+***Figure 24. Currency Manager cluster - current solution***
 
 ## 5. Deployemnt into Azure Cloud
 ### 5.1 Prerequisites
@@ -250,26 +291,35 @@ https://docs.microsoft.com/en-us/azure/service-fabric/overview-managed-cluster
 
 ### 5.2 VS 2020 usage
 
+![image](https://user-images.githubusercontent.com/97020391/151779104-d1afac9a-ef17-454b-a516-40989bfd42a6.png)
 
-![image](https://user-images.githubusercontent.com/97020391/151335748-68e6e727-c692-4ca5-aad7-48f6e21b2036.png)
+***Figure 25. Azure Service Cluster - managed cluster creation from VS 2022***
 
 ![image](https://user-images.githubusercontent.com/97020391/151338971-9d71b037-7884-49ed-9413-faddfbd0c466.png)
 
-***Figure 17. Currency Manager - deployment***
+***Figure 26. ***
 
 #### 5.2.1 Cloud.xml
 
 ![image](https://user-images.githubusercontent.com/97020391/151339033-bdc11e4f-72f6-46fe-bf98-af1c82b03602.png)
 
+***Figure 27. ***
+
 ![image](https://user-images.githubusercontent.com/97020391/151339130-f3055db0-ed86-400d-aa02-bc66901f07ba.png)
+
+***Figure 28. ***
 
 ![image](https://user-images.githubusercontent.com/97020391/151339149-4ad1b8fb-62c0-43e7-9209-ec31e566e792.png)
 
-***Figure 18. Currency Manager configuration - Cloud.xml***
+***Figure 29. Currency Manager configuration - Cloud.xml***
 
 ### 5.3 Azure Portal usage
 
-***Figure 19. Currency Manager cluster - Azure Portal***
+![image](https://user-images.githubusercontent.com/97020391/151778734-37235dc7-f2a5-4341-ae8d-9bc1b693bd38.png)
+
+
+
+***Figure 30. Currency Manager managed cluster creation - Azure Portal***
 
 ### 5.4 ARM Template usage
 
@@ -311,7 +361,13 @@ https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-connect-and
 
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-application-scenarios
 
+Mark Scurrell's presention (MS ASF team): https://www.youtube.com/watch?v=ot0sCx3bPc0
+
 https://www.youtube.com/watch?v=nZqDZxLcJw4
+
+https://azure.microsoft.com/en-us/services/service-fabric/#benefits
+
+https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-concepts-partitioning
 
 https://docs.microsoft.com/en-us/shows/building-microservices-applications-on-azure-service-fabric/service-fabric-history-and-customer-stories 
 
@@ -335,5 +391,10 @@ https://dzimchuk.net/service-fabric-stateful-services/
 https://chsakell.com/2018/10/02/getting-started-with-azure-service-fabric/
 
 https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-reliable-services-communication-remoting
+
+https://medium.com/@Herger/chapter-6-azure-service-fabric-one-cluster-to-rule-them-all-ae18c3950e02
+
+Rebai Hamida's presention regarding 'Containerize Microservices with Azure Service Fabric' on Azure User Group Sweden: https://www.youtube.com/watch?v=e2d0rUFJLlg
+
 
 
