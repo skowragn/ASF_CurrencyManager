@@ -12,12 +12,12 @@
   <Services>
     <Service Name="CountriesService" ServicePackageActivationMode="ExclusiveProcess">
       <StatefulService ServiceTypeName="CountriesServiceType" TargetReplicaSetSize="[CountriesService_TargetReplicaSetSize]" MinReplicaSetSize="[CountriesService_MinReplicaSetSize]">
-        <UniformInt64Partition PartitionCount="[CountriesService_PartitionCount]" LowKey="0" HighKey="9223372036854775807" />
+        <UniformInt64Partition PartitionCount="[CountriesService_PartitionCount]" LowKey="0" HighKey="99" />
       </StatefulService>
     </Service>
     <Service Name="CurrencyManagerService" ServicePackageActivationMode="ExclusiveProcess">
       <StatefulService ServiceTypeName="CurrencyManagerServiceType" TargetReplicaSetSize="[CurrencyManager_TargetReplicaSetSize]" MinReplicaSetSize="[CurrencyManager_MinReplicaSetSize]">
-        <UniformInt64Partition PartitionCount="[CurrencyManager_PartitionCount]" LowKey="0" HighKey="9223372036854775807" />
+        <UniformInt64Partition PartitionCount="[CurrencyManager_PartitionCount]" LowKey="0" HighKey="99" />
       </StatefulService>
     </Service>
     <Service Name="CurrencyManagerWeb" ServicePackageActivationMode="ExclusiveProcess">
